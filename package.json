@@ -12,10 +12,11 @@
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
-  "name": "MealSaverMonorepo",
+  "name": "fastjobsmonorepo",
   "packageManager": "npm@9.6.2",
   "workspaces": [
     "apps/*",
     "packages/*"
   ]
+
 }
