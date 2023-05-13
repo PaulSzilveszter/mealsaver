@@ -3,11 +3,11 @@ import { useState } from "react"
 import {View, StyleSheet, Text, ScrollView, Image, Pressable} from "react-native"
 
 
-import ImageViewer from "../../components/ImageViewer"
+import ImageViewer from "../../../components/ImageViewer"
 import * as ImagePicker from 'expo-image-picker';
 
 
-import placeholderImage from "../../assets/images/splash.png"
+import placeholderImage from "../../../assets/images/splash.png"
 
 
 

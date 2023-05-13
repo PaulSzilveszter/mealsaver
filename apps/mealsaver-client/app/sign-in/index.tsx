@@ -1,21 +1,20 @@
 import React from "react"
 import {View, StyleSheet, Text, ScrollView} from "react-native"
 
-export default function Home(){
+import LoginScreen from "../../components/LoginScreen/LoginScreen"
+
+export default function SignIn(){
     return (
 
         <>
-            <ScrollView style={styles.scrollview}>
-                <Text style={{color:"#AFD3E2"}}>Ciao</Text>
-            </ScrollView>
+            <LoginScreen/>
         </>
 
     )
 }
 const styles = StyleSheet.create({
     scrollview: {
-      flex:1,
-      flexDirection:"column",
+    //   flex:1,
       height:"100%",
       width:"100%",
       backgroundColor:"#252525",
