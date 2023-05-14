@@ -1,28 +1,56 @@
-GET http://localhost:3000/users
-
-
-
-###
-
-
-
-POST http://localhost:3000/users
-Content-Type: application/json
+### 
+# @name register
+POST http://localhost:3000/users/register HTTP/1.1
+content-type: application/json
 
 {
-    "username":"Kyle",
-    "email":"ssss",
-    "password":"password"
+  "username": "testuser",
+  "email": "testuser@email.com",
+  "password": "testpassword"
 }
 
 
-###
 
-POST http://localhost:3000/users/login
-Content-Type: application/json
+### 
+# @name login
+POST http://localhost:3000/users/login HTTP/1.1
+content-type: application/json
 
 {
-    "username":"Kysle",
-    "email":"sss",
-    "password":"passsword"
+  "username": "testuser",
+  "password": "testpassword"
+}
+
+
+
+### 
+# @name refreshToken
+POST http://localhost:3000/token HTTP/1.1
+content-type: application/json
+
+{
+  "token": "{{login.response.body.refreshToken}}"
+}
+
+
+
+### 
+# @name logout
+DELETE http://localhost:3000/logout HTTP/1.1
+content-type: application/json
+
+{
+  "token": "{{login.response.body.refreshToken}}"
+}
+
+
+### 
+# @name updateUser
+PUT http://localhost:3000/users/me HTTP/1.1
+Authorization: Bearer {{login.response.body.accessToken}}
+content-type: application/json
+
+{
+  "username": "testuser",
+  "email": "newemail@email.com"
 }
