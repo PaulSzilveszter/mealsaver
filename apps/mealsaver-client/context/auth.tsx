@@ -16,6 +16,8 @@ function useProtectedRoute(user : any) {
   const router = useRouter();
 
   useEffect(() => {
+    console.log(user)
+
     const inAuthGroup = segments[0] === "(auth)";
 
     if (
@@ -27,7 +29,7 @@ function useProtectedRoute(user : any) {
       router.replace("/sign-in");
     } else if (user && inAuthGroup) {
       // Redirect away from the sign-in page.
-      router.replace("/");
+      // router.replace("/");
     }
   }, [user, segments, router]);
 }
