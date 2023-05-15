@@ -51,6 +51,10 @@ Authorization: Bearer {{login.response.body.accessToken}}
 content-type: application/json
 
 {
-  "username": "testuser",
-  "email": "newemail@email.com"
+  
+  "email": "new2e3mail@email.com"
 }
+
+
+###
+GET http://localhost:3000/users 

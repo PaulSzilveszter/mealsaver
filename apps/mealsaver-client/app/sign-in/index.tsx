@@ -2,6 +2,7 @@ import React from "react"
 import {View, StyleSheet, Text, ScrollView} from "react-native"
 
 import LoginScreen from "../../components/LoginScreen/LoginScreen"
+import { AuthProvider } from "../../context/auth"
 
 export default function SignIn(){
     return (

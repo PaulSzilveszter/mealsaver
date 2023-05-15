@@ -10,13 +10,19 @@ import { View, StyleSheet, ScrollView } from "react-native";
 export default function Layout() {
   return (
 
-    <View style={styles.layoutWrapper}>
+    <AuthProvider>
+
+<View style={styles.layoutWrapper}>
       <Header />
       <ScrollView style={styles.slotContainer}>
         <Slot />
       </ScrollView>
       <Footer />
     </View>
+
+    </AuthProvider>
+
+    
   
   )
 }
