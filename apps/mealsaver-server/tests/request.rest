@@ -1,7 +1,12 @@
-### 
+###
+# @name getUsers
+GET http://localhost:3000/users HTTP/1.1
+
+###
+
 # @name register
 POST http://localhost:3000/users/register HTTP/1.1
-content-type: application/json
+Content-Type: application/json
 
 {
   "username": "testuser",
@@ -9,52 +14,61 @@ content-type: application/json
   "password": "testpassword"
 }
 
+###
 
-
-### 
 # @name login
 POST http://localhost:3000/users/login HTTP/1.1
-content-type: application/json
+Content-Type: application/json
 
 {
   "username": "testuser",
   "password": "testpassword"
 }
 
+###
 
-
-### 
 # @name refreshToken
 POST http://localhost:3000/token HTTP/1.1
-content-type: application/json
+Content-Type: application/json
 
 {
   "token": "{{login.response.body.refreshToken}}"
 }
 
+###
 
-
-### 
 # @name logout
 DELETE http://localhost:3000/logout HTTP/1.1
-content-type: application/json
+Content-Type: application/json
 
 {
   "token": "{{login.response.body.refreshToken}}"
 }
 
+###
 
-### 
 # @name updateUser
 PUT http://localhost:3000/users/me HTTP/1.1
 Authorization: Bearer {{login.response.body.accessToken}}
-content-type: application/json
+Content-Type: application/json
 
 {
-  
-  "email": "new2e3mail@email.com"
+  "email": "testuser232@email.com"
 }
 
-
 ###
-GET http://localhost:3000/users 
+
+# @name addProduct
+POST http://localhost:3000/products/add HTTP/1.1
+Authorization: Bearer {{login.response.body.accessToken}}
+Content-Type: application/json
+
+{
+  "post":{
+    "seller":"paul",
+    "units":3,
+    "pricePerUnit":4,
+    "product":"chicken",
+    "location":"Binj"
+  }
+}
