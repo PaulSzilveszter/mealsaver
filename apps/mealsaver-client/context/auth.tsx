@@ -23,7 +23,7 @@ function useProtectedRoute(user : any) {
     if (
       // If the user is not signed in and the initial segment is not anything in the auth group.
       !user &&
-      !inAuthGroup
+      inAuthGroup
     ) {
       // Redirect to the sign-in page.
       router.replace("/sign-in");
